@@ -1,16 +1,5 @@
-import {combineReducers, createStore} from "redux";
+import {createStore} from "redux";
+import {allReducers} from "./reducers";
 
-const playerInitialState = {
-  title: 'My Scoreboard',
-}
-
-const playerReducer = (state = playerInitialState, action) => {
-  return state;
-}
-
-const rootReducer = combineReducers({playerReducer});
-
-export const store = createStore(rootReducer,
+export const store = createStore(allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-console.log(store);
